@@ -1,0 +1,36 @@
+# Editor
+.idea
+.vscode/
+
+# Virtual Evnvironment
+.venv/
+.env/
+venv/
+env/
+
+# Byte-code files
+*.pyc
+*.pyd
+*.pyo
+__pycache__/
+
+# Unit test / coverage
+.coverage
+.tox/
+.pytest_cache/
+htmlcov/
+reports/
+temp/
+
+# Misc
+doc_*/
+.DS_Store
+
+# Package build artifacts
+*.egg-info/
+build/
+dist/
+
+# Sonar
+.sonar/
+.scannerwork/
