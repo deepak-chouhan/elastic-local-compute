@@ -155,9 +155,9 @@ This is a local AWS EC2 like system that allow users to provision, manage and in
 
 ### 2.9 Resource Limits
 
-- **REQ-LIM-001** [Unwanted-behavior]: IF host available memory < 4GB, THEN the system shall prevent new instance creation with error message.
-- **REQ-LIM-002** [Event-driven]: WHEN user creates instances, the system shall check if disk space > (instance_disk_size + 5GB), else reject.
-- **REQ-LIM-003** [Ubiquitous]: The system shall display host resource usage (total RAM, used RAM, disk space) in UI.
+- **REQ-LIM-001** [*Unwanted-behavior*]: IF host available memory < 4GB, THEN the system shall prevent new instance creation with error message.
+- **REQ-LIM-002** [*Event-driven*]: WHEN user creates instances, the system shall check if disk space > (instance_disk_size + 5GB), else reject.
+- **REQ-LIM-003** [*Ubiquitous*]: The system shall display host resource usage (total RAM, used RAM, disk space) in UI.
 
 ## 3. NOT-FUNCTIONAL REQUIREMENTS
 
@@ -175,7 +175,7 @@ This is a local AWS EC2 like system that allow users to provision, manage and in
 
 ### 3.3 Logging
 
-- **REQ-LOG-001** [Ubiquitous]: The system shall log error and warning to `~/.ec2-as-service/logs/app.log`.
-- **REQ-LOG-002** [Ubiquitous]: The system shall rotate logs when exceeding 10MB.
-- **REQ-LOG-003** [Ubiquitous]: The system shall create new log for each day.
-- **REQ-LOG-004** [Ubiquiouts]: The system shall retain logs for a maximum of 7 days.
+- **REQ-LOG-001** [*Ubiquitous*]: The system shall log error and warning to `~/.ec2-as-service/logs/app.log`.
+- **REQ-LOG-002** [*Ubiquitous*]: The system shall rotate logs when exceeding 10MB.
+- **REQ-LOG-003** [*Ubiquitous*]: The system shall create new log for each day.
+- **REQ-LOG-004** [*Ubiquiouts*]: The system shall retain logs for a maximum of 7 days.

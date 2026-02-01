@@ -9,7 +9,7 @@
 
 ## High Level Diagram
 
-<!-- ![Architecture](./images/architecture.jpg) -->
+![Architecture](./images/architecture.jpg)
 
 ## High Level Context
 
@@ -23,7 +23,6 @@
 - Web Terminal
 - SSH Key Management
 
-
 ### Backend
 
 **Purpose**: The backend handles all low-level operations through multiple layers.
@@ -33,6 +32,7 @@
 **Purpose**: Expose HTTP/WebSocket endpoints for client communication.
 
 **Endpoints**:
+
 ```
 API Layer (FastAPI)
 |
@@ -62,7 +62,9 @@ API Layer (FastAPI)
 |   |---- GET       /health         # Quick Pulse for health check
 |   |---- GET       /stats          # Get stats for host system usage (cpu, memory, disk)
 ```
+
 **Requirements Satisfied**:
+
 - **Instance Creation**: REQ-INST-001 to REQ-INST-015
 - **SSH Key Management**: REQ-SSH-001 to REQ-SSH-007
 - **Image Management**: REQ-IMG-001 to REQ-IMG-005
@@ -73,6 +75,7 @@ API Layer (FastAPI)
 **Purpose**: Implement business logic and interact with the host system.
 
 **Component**:
+
 ```
 Service Layer
 |
@@ -104,7 +107,9 @@ Service Layer
 |   |---- handle_communication      # Relay data bidirectionaly
 |   |---- close()                   # Close connection and cleanup resources
 ```
+
 **Requirements Satisfied**:
+
 - **Instance Creation**: REQ-INST-001, REQ-INST-006, REQ-INST-009 to REQ-INST-013, REQ-INST-015
 - **Network Management**: REQ-NET-001 to REQ-NET-008
 - **SSH Key Management**: REQ-SSH-001 to REQ-SSH-003
@@ -115,6 +120,7 @@ Service Layer
 **Purpose**: Manage persistent information and provide data abstraction.
 
 **Component**:
+
 ```
 Data Layer
 |
@@ -157,7 +163,9 @@ Data Layer
 |---- Database                      # SQLite at (~/.ec2-as-serice)
 |   |---- Location: ~/.ec2-as-service/ec2service.db
 ```
+
 **Requirements Satisfied**:
+
 - **Instance Creation**: REQ-INST-014
 - **SSH Key Management**: REQ-SSH-007
 - **Image Management**: REQ-IMG-005
