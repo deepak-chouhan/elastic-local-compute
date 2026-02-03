@@ -1,4 +1,4 @@
-# EC2 as Service Locally
+# Elastic Local Compute
 
 This is a local AWS EC2 like system that allow users to provision, manage and interact with compute instances on their host system.
 
@@ -11,7 +11,7 @@ This is a local AWS EC2 like system that allow users to provision, manage and in
 
 ## 1. SYSTEM OVERVIEW
 
-- **Product Name**: EC2 as Service Locally
+- **Product Name**: Elastic Local Compute
 - **Purpose**: A local AWS EC2 like virtualization service running on macOS using libvirt/QEMU.
 - **Platform**: macOS (Apple Silicon)
 
@@ -78,7 +78,7 @@ This is a local AWS EC2 like system that allow users to provision, manage and in
 
 ### 2.4 Network Management
 
-- **REQ-NET-001** [*Ubiquitous*]: The system shall create a NAT network name `ec2-as-service` for instance connectivity.
+- **REQ-NET-001** [*Ubiquitous*]: The system shall create a NAT network name `elastic-local-compute` for instance connectivity.
 - **REQ-NET-002** [*Ubiquitous*]: The system shall allocate IP address from the range `192.168.100.10` to `192.168.100.254` using DHCP.
 - **REQ-NET-003** [*Event-driven*]: WHEN an instance boots, the system shall assign an IP address via DHCP.
 - **REQ-NET-004** [*Event-drive*]: WHEN an instance obtains an IP address, the system shall update the instance record with IP address.
@@ -138,13 +138,13 @@ This is a local AWS EC2 like system that allow users to provision, manage and in
 
 ### 2.8 Storage
 
-- **REQ-STOR-001** [*Ubiquitous*]: The system shall create a libvirt storage pool name `.ec2-as-service` in the user's home directory.
+- **REQ-STOR-001** [*Ubiquitous*]: The system shall create a libvirt storage pool name `.elastic-local-compute` in the user's home directory.
 - **REQ-STOR-002** [*Event-driven*]: WHEN an instance is created, the system shall create instance disk image in `qcow2` format.
 - **REQ-STOR-003** [*Event-driven*]: WHEN creating instance disk, the system shall use copy-on-write to minimize the storage usage.
 - **REQ-STOR-004** [*Even-driven*]: WHEN an instance is terminated, the system shall delete all associated disk images.
 - **REQ-STOR-005** [*Ubiquitous*]: The system shall organize storage in the following directory structure:
     ```
-    ~/.ec2-as-service/
+    ~/.elastic-local-compute/
     |---storage/                # libvirt storage pool
     |---images/                 # base OS images
     |---instances/              # per-instance data
@@ -175,7 +175,7 @@ This is a local AWS EC2 like system that allow users to provision, manage and in
 
 ### 3.3 Logging
 
-- **REQ-LOG-001** [*Ubiquitous*]: The system shall log error and warning to `~/.ec2-as-service/logs/app.log`.
+- **REQ-LOG-001** [*Ubiquitous*]: The system shall log error and warning to `~/.elastic-local-compute/logs/app.log`.
 - **REQ-LOG-002** [*Ubiquitous*]: The system shall rotate logs when exceeding 10MB.
 - **REQ-LOG-003** [*Ubiquitous*]: The system shall create new log for each day.
 - **REQ-LOG-004** [*Ubiquiouts*]: The system shall retain logs for a maximum of 7 days.

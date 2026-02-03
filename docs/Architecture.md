@@ -160,8 +160,8 @@ Data Layer
 |       |---- fingerprint
 |       |---- created_at
 |
-|---- Database                      # SQLite at (~/.ec2-as-serice)
-|   |---- Location: ~/.ec2-as-service/ec2service.db
+|---- Database                      # SQLite at (~/.elastic-local-compute)
+|   |---- Location: ~/.elastic-local-compute/elc_service.db
 ```
 
 **Requirements Satisfied**:
