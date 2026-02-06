@@ -1,0 +1,20 @@
+# pyproject.toml for the Elastic Local Compute application
+
+[project]
+name="elastic-local-compute"
+version="0.1.0"
+description = "A local AWS EC2 like virtualization service running on macOS using libvirt/QEMU."
+readme = "README.md"
+dependencies=[
+    "fastapi",
+    "uvicorn[standard]",
+]
+
+[tool.ruff]
+line-length = 88
+select = ["ALL"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+

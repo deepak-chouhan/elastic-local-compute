@@ -161,7 +161,7 @@ Data Layer
 |       |---- created_at
 |
 |---- Database                      # SQLite at (~/.elastic-local-compute)
-|   |---- Location: ~/.elastic-local-compute/elc_service.db
+|   |---- Location: ~/.elastic-local-compute/elastic-local-compute.db
 ```
 
 **Requirements Satisfied**:
