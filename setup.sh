@@ -44,3 +44,55 @@ echo -e "${GREEN}✔ Architecture: ${ARCH}${NC}"
 # Check dependencies
 echo ""
 echo -e "${BLUE}Checking dependencies...${NC}"
+
+# Brew
+if ! command -v brew &> /dev/null; then
+    echo -e "${RED}✗ Homebrew not found${NC}"
+    echo -e "- Install from: https://brew.sh/"
+    exit 1
+fi
+echo -e "${GREEN}✔ Homebrew installed${NC}"
+
+# Python
+if ! command -v python3 &> /dev/null; then
+    echo -e "${YELLOW}⚠ Python 3 not found, installing...${NC}"
+    brew install python@3.11
+fi
+PYTHON_VERSION=$(python3 --version)
+echo -e "${GREEN}✓ $PYTHON_VERSION installed${NC}"
+
+# Node.JS
+if ! command -v node &> /dev/null; then
+    echo -e "${YELLOW}⚠ Node.js not found, installing...${NC}"
+    brew install node
+fi
+NODE_VERSION=$(node --version)
+echo -e "${GREEN}✓ Node.JS $NODE_VERSION installed${NC}"
+
+# Libvirt
+if ! command -v virsh &> /dev/null; then
+    echo -e "${YELLOW}⚠ libvirt not found, installing...${NC}"
+    brew install libvirt
+fi
+echo -e "${GREEN}✓ Libvirt installed${NC}"
+
+# QEMU
+if ! command -v qemu-system-aarch64 &> /dev/null; then
+    echo -e "${YELLOW}⚠ QEMU not found, installing...${NC}"
+    brew install qemu
+fi
+echo -e "${GREEN}✓ QEMU installed${NC}"
+
+# genisoimage (for cloud-init)
+if ! command -v mkisofs &> /dev/null && ! command -v genisoimage &> /dev/null; then
+    echo -e "${YELLOW}⚠ mkisofs/genisoimage not found, installing cdrtools...${NC}"
+    brew install cdrtools
+fi
+if command -v mkisofs &> /dev/null; then
+    echo -e "${GREEN}✓ mkisofs installed${NC}"
+elif command -v genisoimage &> /dev/null; then
+    echo -e "${GREEN}✓ genisoimage installed${NC}"
+else
+    echo -e "${RED}✗ ISO creation tool not found${NC}"
+    exit 1
+fi
