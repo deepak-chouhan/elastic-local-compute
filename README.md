@@ -1,4 +1,5 @@
 # Elastic Local Compute
+![inProgress](https://img.shields.io/badge/InProgress-orange?style=for-the-badge)
 
 A local AWS EC2 like virtualization service running on macOS using libvirt/QEMU.
 
